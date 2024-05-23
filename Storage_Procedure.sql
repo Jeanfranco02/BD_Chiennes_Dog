@@ -148,11 +148,12 @@ DELIMITER ;
 DELIMITER //
 
 CREATE PROCEDURE sp_insertar_valoracion(
-    IN p_calificacion_producto INT
+    IN p_calificacion_producto INT,
+    IN p_comentario VARCHAR(250)
 )
 BEGIN
-    INSERT INTO tb_valoraciones(calificacion_producto, fecha_valoracion)
-    VALUES (p_calificacion_producto, NOW());
+    INSERT INTO tb_valoraciones(calificacion_producto, comentario, fecha_valoracion)
+    VALUES (p_calificacion_producto, p_comentario, NOW());
 
     SELECT 'Valoración registrada correctamente.' AS mensaje;
 END //
