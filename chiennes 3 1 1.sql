@@ -85,6 +85,7 @@ CREATE TABLE tb_detalles_pedidos(
 CREATE TABLE tb_valoraciones(
 	id_valoracion INT PRIMARY KEY AUTO_INCREMENT,
 	calificacion_producto INT NOT NULL,
+	comentario VARCHAR(250),
 	fecha_valoracion DATE NOT NULL DEFAULT NOW()
 );
 
