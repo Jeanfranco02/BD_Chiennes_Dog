@@ -32,7 +32,8 @@ CREATE TABLE tb_clientes(
 	nacimiento_cliente DATE NOT NULL,
 	direccion_cliente VARCHAR(250) NOT NULL,
 	clave_cliente VARCHAR(100) NOT NULL,
-	fecha_registro DATE NOT NULL DEFAULT NOW()
+	fecha_registro DATE NOT NULL DEFAULT NOW(),
+	estado_cliente TINYINT(1) NOT NULL DEFAULT 1
 );
 
 #CREACION DE LA TABLA PARA LAS MARCAS DE LOS PRODUCTOS
