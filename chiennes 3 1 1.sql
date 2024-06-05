@@ -58,8 +58,8 @@ CREATE TABLE tb_productos(
 	descripcion_producto VARCHAR(250),
 	precio_producto NUMERIC(5,2) NOT NULL,
 	imagen_producto VARCHAR(255) NOT NULL,
-	estado BOOLEAN NOT NULL,
-	existencia INT NOT NULL,
+	estado_producto BOOLEAN NOT NULL,
+	existencias_producto INT NOT NULL,
 	fecha_registro DATE NOT NULL DEFAULT NOW(),
 	id_administrador INT NOT NULL
 );
@@ -125,3 +125,10 @@ ADD CONSTRAINT fk_detalle_pedido
 FOREIGN KEY (id_pedido) REFERENCES tb_pedidos(id_pedido),
 ADD CONSTRAINT fk_detalle_producto
 FOREIGN KEY (id_producto) REFERENCES tb_productos(id_producto);
+
+
+
+INSERT INTO tb_cargos (nombre_cargo)values ('jefe');
+
+INSERT INTO tb_administradores(nombre_administrador, apellido_administrador, id_cargo, correo_administrador, clave_administrador) 
+VALUES ('Eduts', 'Guerra', 1, 'eduts@gmail.com','$2y$10$mgITCka8G.nd7u84zBEKZ.fpqpRiJDotyePB8WoxZA3..7DgBji7e' );
